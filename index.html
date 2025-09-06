@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>GitHub Test</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; margin: 0; height: 100vh; display: grid; place-items: center; background:#f6f7fb; }
+    .card { background: white; padding: 24px 28px; border-radius: 14px; box-shadow: 0 8px 24px rgba(0,0,0,.08); text-align: center; }
+    h1 { margin: 0 0 8px; font-size: 22px; }
+    p { margin: 4px 0; color: #555; }
+    code { background:#f0f3f7; padding: 2px 6px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>✅ It works!</h1>
+    <p>This page is served from your GitHub repo.</p>
+    <p>Repo: <code id="repo">unknown</code></p>
+    <p>Loaded at: <code id="time"></code></p>
+  </div>
+
+  <script>
+    document.getElementById("time").textContent = new Date().toLocaleString();
+    // If using GitHub Pages at https://username.github.io/reponame
+    // try to infer the repo name from the URL:
+    const m = location.pathname.split("/").filter(Boolean);
+    document.getElementById("repo").textContent = m.length ? m[0] : "(root)";
+  </script>
+</body>
+</html>
